@@ -20,7 +20,7 @@
             Button
           </a>
 
-          <div class="navbar-dropdown">
+          <div class="navbar-dropdown is-active">
             <a class="navbar-item">
               About
             </a>

@@ -12,8 +12,8 @@ export default {
   data() {
     return {
       links: [
-        {name: 'Button', route: 'button'},
-        {name: 'Box', route: 'box'}
+        {name: 'Box', route: 'box'},
+        {name: 'Button', route: 'button'}
 
       ]
     }

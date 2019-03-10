@@ -31,9 +31,17 @@ export default new Router({
       path: '/button',
       name: 'button',
       // route level code-splitting
-      // this generates a separate chunk (elements.[hash].js) for this route
+      // this generates a separate chunk (button.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import(/* webpackChunkName: "button" */ './views/singles/Button.vue')
+    },
+    {
+      path: '/menu',
+      name: 'menu',
+      // route level code-splitting
+      // this generates a separate chunk (menu.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import(/* webpackChunkName: "menu" */ './views/singles/Menu.vue')
     },
   ]
 })
