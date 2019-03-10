@@ -12,13 +12,10 @@
 
 <script>
 
-import HasPropClasses from '@/mixins/hasPropClasses'
-
 import VbMenu from '@/components/VbMenu'
 
 export default {
   name: 'Menu',
-  mixins: [ HasPropClasses ],
   components: { VbMenu },
   computed: {
     labels() { return this.labelNames.split(",")},

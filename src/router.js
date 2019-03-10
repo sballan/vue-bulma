@@ -43,5 +43,13 @@ export default new Router({
       // which is lazy-loaded when the route is visited.
       component: () => import(/* webpackChunkName: "menu" */ './views/singles/Menu.vue')
     },
+    {
+      path: '/navbar',
+      name: 'navbar',
+      // route level code-splitting
+      // this generates a separate chunk (navbar.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import(/* webpackChunkName: "navbar" */ './views/singles/Navbar.vue')
+    }
   ]
 })
