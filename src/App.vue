@@ -1,13 +1,22 @@
 <template>
   <div id="app">
-    <!-- <vb-navbar></vb-navbar> -->
+    <vb-navbar items="links"></vb-navbar>
     <router-view/>
   </div>
 </template>
 
 <script>
-// import VbNavbar from '@/components/VbNavbar'
+import VbNavbar from '@/components/VbNavbar'
 export default {
-  // components: { VbNavbar }
+  components: { VbNavbar },
+  data() {
+    return {
+      links: [
+        {name: 'Button', route: 'button'},
+        {name: 'Box', route: 'box'}
+
+      ]
+    }
+  }
 }
 </script>

@@ -9,7 +9,7 @@ export default new Router({
     {
       path: '/',
       name: 'home',
-      component: Home
+      component: Home,
     },
     {
       path: '/elements',
@@ -26,6 +26,14 @@ export default new Router({
       // this generates a separate chunk (hero-view.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import(/* webpackChunkName: "heroView" */ './views/HeroView.vue')
-    }
+    },
+    {
+      path: '/button',
+      name: 'button',
+      // route level code-splitting
+      // this generates a separate chunk (elements.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import(/* webpackChunkName: "button" */ './views/singles/Button.vue')
+    },
   ]
 })
