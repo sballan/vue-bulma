@@ -32,41 +32,34 @@ export default new Router({
       component: () => import(/* webpackChunkName: "heroView" */ './views/HeroView.vue')
     },
     {
-      path: '/button',
-      name: 'button',
-      // route level code-splitting
-      // this generates a separate chunk (button.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "button" */ './views/singles/Button.vue')
-    },
-    {
-      path: '/menu',
-      name: 'menu',
-      // route level code-splitting
-      // this generates a separate chunk (menu.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "menu" */ './views/singles/Menu.vue')
-    },
-    {
-      path: '/navbar',
-      name: 'navbar',
-      // route level code-splitting
-      // this generates a separate chunk (navbar.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "navbar" */ './views/singles/Navbar.vue')
-    },
-    {
-      path: '/home/test/breadcrumb',
-      name: 'breadcrumb',
-      // route level code-splitting
-      // this generates a separate chunk (breadcrumb.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "breadcrumb" */ './views/singles/Breadcrumb.vue')
-    },
-    {
       path: '/explore',
       name: 'explore',
-      component: () => import(/* webpackChunkName: "explore" */ './views/Explore.vue')
+      component: () => import(/* webpackChunkName: "explore" */ './views/Explore.vue'),
+      children: [
+        {
+          path: 'breadcrumb',
+          name: 'breadcrumb',
+          // route level code-splitting
+          // this generates a separate chunk (breadcrumb.[hash].js) for this route
+          // which is lazy-loaded when the route is visited.
+          component: () => import(/* webpackChunkName: "breadcrumb" */ './views/singles/Breadcrumb.vue')
+        },
+        {
+          path: 'button',
+          name: 'button',
+          component: () => import(/* webpackChunkName: "button" */ './views/singles/Button.vue')
+        },
+        {
+          path: 'menu',
+          name: 'menu',
+          component: () => import(/* webpackChunkName: "menu" */ './views/singles/Menu.vue')
+        },
+        {
+          path: 'navbar',
+          name: 'navbar',
+          component: () => import(/* webpackChunkName: "navbar" */ './views/singles/Navbar.vue')
+        },
+      ]
 
     }
   ]
