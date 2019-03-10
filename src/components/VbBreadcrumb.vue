@@ -1,10 +1,11 @@
 <template>
   <nav class="breadcrumb" aria-label="breadcrumbs">
     <ul>
-      <li><a href="#">Bulma</a></li>
-      <li><a href="#">Documentation</a></li>
-      <li><a href="#">Components</a></li>
-      <li class="is-active"><a href="#" aria-current="page">Breadcrumb</a></li>
+      <li v-for="path in pathArray" :key="path[path.length - 1]">
+        <router-link :to="`/${path.join('/')}`">
+          {{path[path.length - 1]}}
+        </router-link>
+      </li>
     </ul>
   </nav>
 </template>
@@ -15,19 +16,20 @@ import HasPropClasses from '@/mixins/hasPropClasses.js'
 export default {
   name: 'VbBreadcrumb',
   mixins: [ HasPropClasses ],
-  props: {
-    items: Array,
-    defaultActive: String,
-    nav: Boolean
-  },
-  data: function() {
-    return {
-      activeItem: this.defaultActive
-    }
-  },
-  methods: {
-    setActive(item) {
-      this.activeItem = item
+  created() { console.log(this.$router.currentRoute)},
+  computed: {
+    fullPath() {
+      return this.$router.currentRoute.fullPath
+    },
+    pathArray() {
+      const path = this.fullPath.split('/')
+      if(path[0] === "") path.shift()
+
+      const pathArray = []
+      for(let i = 1; i <= path.length; i++){
+        pathArray.push(path.slice(0, i))
+      }
+      return pathArray
     }
   }
 }

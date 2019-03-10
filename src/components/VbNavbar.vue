@@ -15,7 +15,7 @@
           Home
         </a>
 
-        <div class="navbar-item has-dropdown is-active is-hoverable">
+        <div class="navbar-item has-dropdown is-hoverable">
           <a to="/button" class="navbar-link">
             Button
           </a>
