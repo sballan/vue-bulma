@@ -1,6 +1,6 @@
 <template>
-  <single-viewer>
-    <vb-menu></vb-menu>
+  <single-viewer class="tile">
+    <vb-menu :items="items"></vb-menu>
   </single-viewer>
 </template>
 
@@ -14,6 +14,15 @@ import VbMenu from '@/components/VbMenu'
 export default {
   name: 'Menu',
   mixins: [ HasPropClasses ],
-  components: { SingleViewer, VbMenu }
+  components: { SingleViewer, VbMenu },
+  data() {
+    return {
+      items: {
+        General: ['Admministration', 'Team Settings'],
+        Administration: ['Invitations', 'Authentication'],
+        Transactions: ['Payments', 'Transfers', 'Balance']
+      }
+    }
+  }
 }
 </script>

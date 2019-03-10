@@ -13,7 +13,7 @@
       <div class="navbar-start">
         <a class="navbar-item">
           Home
-        </a
+        </a>
 
         <div class="navbar-item has-dropdown is-active is-hoverable">
           <a to="/button" class="navbar-link">

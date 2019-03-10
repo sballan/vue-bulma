@@ -1,9 +1,16 @@
 <template>
-  <aside class="menu">
-    <vb-menu-item label="General" :list="['Admministration', 'Team Settings']"></vb-menu-item>
-    <vb-menu-item label="Administration" :list="['Team Settings', 'Invitations', 'Authentication']"></vb-menu-item>
-    <vb-menu-item label="Transactions" :list="['Payments', 'Transfers', 'Balance']"></vb-menu-item>
-  </aside>
+  <div class="menu">
+    <vb-menu-item
+      v-for="(list, name) in items"
+      :key="name"
+      :label="name"
+      :list=list
+    >
+    </vb-menu-item>
+    <!-- <vb-menu-item label="General" :list="['Admministration', 'Team Settings']"></vb-menu-item>
+    <vb-menu-item label="Administration" :list="['Invitations', 'Authentication']"></vb-menu-item>
+    <vb-menu-item label="Transactions" :list="['Payments', 'Transfers', 'Balance']"></vb-menu-item> -->
+  </div>
 </template>
 
 <script>
@@ -16,7 +23,10 @@ export default {
   mixins: [ HasPropClasses ],
   components: { VbMenuItem },
   props: {
-    list: Array
+    items: {
+      type: Object,
+      default() {return []}
+    }
   },
   data: function() {
     return {
