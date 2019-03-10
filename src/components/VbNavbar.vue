@@ -1,12 +1,7 @@
 <template>
   <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
-      <a class="navbar-item" href="https://vuejs.org">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Vue.js_Logo.svg" width="30" height="28">
-      </a>
-      <a class="navbar-item" href="https://bulma.io">
-        <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
-      </a>
+      <h1>Vue-Bulma</h1>
     </div>
 
     <div id="navbarBasicExample" class="navbar-menu">
@@ -51,6 +46,10 @@
 <script>
 export default {
   name: 'VbNavbar',
+  props: {
+    links: Array
+  }
+
 }
 </script>
 
