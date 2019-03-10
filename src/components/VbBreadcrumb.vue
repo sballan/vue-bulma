@@ -1,7 +1,7 @@
 <template>
   <nav class="breadcrumb" aria-label="breadcrumbs">
     <ul>
-      <li v-for="path in pathArray" :key="path[path.length - 1]">
+      <li v-for="(path, index) in pathArray" :key="path[path.length - 1]" :class="{'is-active': index == pathArray.length - 1}">
         <router-link :to="`/${path.join('/')}`">
           {{path[path.length - 1]}}
         </router-link>
