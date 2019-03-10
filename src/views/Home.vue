@@ -1,12 +1,13 @@
 <template>
   <div>
-    Some stufff here
+    <vb-hero></vb-hero>
   </div>
 </template>
 
 <script>
-
+import VbHero from '@/components/layout/VbHero.vue'
 export default {
-  name: 'home'
+  name: 'VbHero',
+  components: { VbHero}
 }
 </script>
